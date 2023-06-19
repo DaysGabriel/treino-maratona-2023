@@ -15,7 +15,7 @@ int main()
     
     for (int i = 0; i < 4; i++)
     {
-        for (int j = 1; j < 4; j++)
+        for (int j = 0; j < 4; j++)
         {
             if (v[i] == v[j])
             {
@@ -24,6 +24,6 @@ int main()
         }
     }
     
-    count = floor (count/4);
+    count = (floor (count/4)) - 1;
     cout << count << "\n";
 }
