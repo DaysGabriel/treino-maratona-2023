@@ -1,5 +1,6 @@
 /*https://chat.openai.com/share/b9ce2b10-373d-4ac6-9a5e-2b11a7024842
-https://chat.openai.com/share/d674713a-25ac-40a9-98be-2b38735dacaf*/
+https://chat.openai.com/share/d674713a-25ac-40a9-98be-2b38735dacaf
+https://chat.openai.com/share/b9ce2b10-373d-4ac6-9a5e-2b11a7024842*/
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -11,8 +12,6 @@ int main()
     char d;
     string n;
 
-    vector<int> pos;
-
     cin >> d >> n;
     bool prim_ent = 1;
 
@@ -20,34 +19,23 @@ int main()
     {
         if (!prim_ent)
             cin >> d >> n;
-        
-        for (int i = 0; n[i] != '\0'; i++)
+
+        string res = "";
+
+        for (unsigned long long int i = 0; n[i] != '\0'; i++)
         {
-            
-            if (n[i] == d)
-            {
-                pos.push_back(i);
-            }
+            if (n[i] != d) res += n[i];
         }
 
-        string copy = n;
-
-        
-        for (int i = 0; i < (int) pos.size(); i++)
+        if (!res.empty()) 
         {
-            //cout << "oi" << endl;
-            n.erase(pos[i], 1);
+            unsigned long long int resi = stoull(res);
+            cout << resi << "\n";
         }
-
-        pos.clear();
-
-        if (!n.empty()) 
+        else
         {
-            unsigned long long int ni = stoull(n);
-            cout << ni << "\n";
+            cout << "0\n";
         }
-
-        n = copy;
 
         prim_ent = 0;
     }
